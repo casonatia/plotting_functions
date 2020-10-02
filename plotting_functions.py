@@ -399,7 +399,7 @@ class classification :
                 fig.suptitle('Normalized Confusion Matrix')
             im, cbar = self.heatmap(cm, labels, labels, ax=axs[0,0], cmap="Blues", cbarlabel="Normalized Confusion matrix")
             texts = self.annotate_heatmap(im, valfmt="{x:.3f}")
-            cm_c = confusion_matrix(df[ytrue], df[ypred], labels=None, sample_weight=None, normalize=None)
+            cm_c = confusion_matrix(df[ytrue], df[ypred], labels=labels, sample_weight=None, normalize=None)
             axs[0,1].barh(labels, [sum(i) for i in cm_c])
             axs[0,1].axes.get_xaxis().set_visible(False)
             axs[0,1].axes.get_yaxis().set_visible(False)
