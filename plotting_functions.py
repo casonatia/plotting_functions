@@ -375,7 +375,7 @@ class classification :
         if normalize not in ['true', 'pred', 'all', None] :
             print('normalize must be in  ["true", "pred", "all", None]')
         if only_matrix :
-            cm = confusion_matrix(df[ytrue], df[ypred], labels=None, sample_weight=None, normalize=normalize)
+            cm = confusion_matrix(df[ytrue], df[ypred], labels=labels, sample_weight=None, normalize=normalize)
             if figsize :
                 fig, ax = plt.subplots(figsize = figsize)
             else :
@@ -388,7 +388,7 @@ class classification :
             else :
                 plt.title('Normalized Confusion Matrix')
         else :   
-            cm = confusion_matrix(df[ytrue], df[ypred], labels=None, sample_weight=None, normalize=normalize)
+            cm = confusion_matrix(df[ytrue], df[ypred], labels=labels, sample_weight=None, normalize=normalize)
             if figsize :
                 fig, axs = plt.subplots(2, 2, figsize=figsize, sharey= False)
             else :
